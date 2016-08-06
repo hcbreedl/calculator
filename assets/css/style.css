@@ -1,0 +1,53 @@
+
+
+#button0 {
+	width: 450px;
+	margin-top: 17px;
+}
+
+.panel-default {
+    border:none;
+}
+
+.number {
+	background-color: #0dc9f7;
+	width: 300px;
+	border: none;
+	border-radius: 100px;
+}
+
+.number:hover {
+	color: white;
+	opacity: 0.2;
+	transition: 0.5s;
+}
+
+.operator {
+	width: 87px;
+	margin-top: 17px;
+	border-radius: 50px;
+}
+
+.operator:hover {
+	color: white;
+	opacity: 0.5;
+	transition: 0.5s;
+}
+
+.equal {
+	margin-top: 14px;
+    width: 904px;
+    border-radius: 100px;
+}
+
+.equal:hover {
+	color: white;
+	opacity: 0.6;
+	transition: 0.7s;
+}
+
+.clear {
+	width: 902px;
+    margin-top: 0;
+    border-radius: 100px;
+}
