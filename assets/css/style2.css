@@ -1,0 +1,32 @@
+.results {
+	margin-left: 50px;
+	color: darkgrey;
+}
+
+.colorChanger {
+	margin-left: 10px;
+    width: 211px;
+    height: 86px;
+}
+
+#result {
+	margin-left: 53px;
+	color: black;
+}
+
+#operator {
+	color: red;
+}
+
+#clear {
+	margin-left: 10px;
+    width: 211px;
+}
+
+#buttonMinus {
+	width: 45px;
+}
+
+#buttonDivide {
+	width: 45px;
+}

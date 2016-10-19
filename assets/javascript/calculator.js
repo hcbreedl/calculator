@@ -1,9 +1,7 @@
 $(document).ready(function () {
-    // make our variables global to the runtime of our application
     var firstNumber, secondNumber, operator, result, isOperatorChosen, isCalculated;
 
-    // use a function to initialize our calculator. this way when the user hits clear
-    // we can guarantee that we're in the exact same state as we were when the app started.
+    // Empties results and sets calculator ready for use
     function initializeCalculator () {
         firstNumber = "";
         secondNumber = "";
@@ -14,12 +12,10 @@ $(document).ready(function () {
         $('#firstNumber, #secondNumber, #operator, #result').empty();
     }
 
-    // add an on click listener to all elements that have the class 'number'
+    // Click event for Number Buttons
     $('.number').on('click', function () {
-        // check if we've already ran a calculation, if we have, just exit
         if (isCalculated) return;
 
-        // if operator is chosen, we should be writing the secondNumber, otherwise, the firstNumber
         if (isOperatorChosen) {
             secondNumber += this.value;
             $('#secondNumber').html(secondNumber);
@@ -29,38 +25,23 @@ $(document).ready(function () {
         }
     });
 
-    // add an on click listener to all elements that have the class 'operator'
+    // Click events for operators
     $('.operator').on('click', function () {
-        // check if we've already ran a calculation, if we have, just exit
         if (isCalculated) return;
-
-        // set isOperatorChosen to true so we start writing to secondNumber
         isOperatorChosen = true;
-
-        // store off the operator
         operator = this.value;
-
-        // set the html of the #operator to the text of what was clicked
         $('#operator').html($(this).text());
     });
 
 
-    // add an on click listener to all elements that have the class 'equal'
+    // Click event for Equal button
     $('.equal').on('click', function () {
-        // if we already clicked equal, don't do the calculation again
         if (isCalculated) return;
-
-        // set isCalculated to true so that we dont get in a weird UI state
-        // by clicking buttons again
         isCalculated = true;
 
-        // use parseInt to convert our string representation of numbers into actual
-        // integers so javascript can run our operators
         firstNumber = parseInt(firstNumber);
         secondNumber = parseInt(secondNumber);
 
-        // based on the operator that was chosen, run the operation and set
-        // the html of the result of that opearation
         var result;
         if (operator == "plus"){
             result = firstNumber + secondNumber;
@@ -85,12 +66,33 @@ $(document).ready(function () {
         $('#result').html(result);
     });
 
-    // add an on click listener to all elements that have the class 'clear'
+    // Click event for clear button
     $('.clear').on('click', function () {
-        // call initializeCalculater so we can reset the state of our app
         initializeCalculator();
     });
 
-    // call initializeCalculater so we can set the state of our app
+    // Resets for original calculator theme
+    $('#currentTheme').on('click', function () {
+        $('.btn').css({ 'background-color' : '', 'opacity' : '' });;
+    });
+
+    // Changes color theme
+    $('#colorChanger2').on('click', function () {
+        $('.btn').css( "background-color", "#e91e63");
+        $('.operator').css( "background-color", "#42a5f5");
+        $('#buttonEqual').css( "background-color", "#4db6ac");
+        $('.colorChanger').css( "background-color", "white");
+        $('#clear').css( "background-color", "white");
+    });
+
+    // Changes color theme
+    $('#colorChanger3').on('click', function () {
+        $('.btn').css( "background-color", "#fb8c00");
+        $('.operator').css( "background-color", "#76ff03");
+        $('#buttonEqual').css( "background-color", "#e53935");
+        $('.colorChanger').css( "background-color", "white");
+        $('#clear').css( "background-color", "white");
+    });
+
     initializeCalculator();
 });
