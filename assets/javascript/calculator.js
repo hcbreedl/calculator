@@ -63,7 +63,7 @@ $(document).ready(function () {
             result = Math.pow(firstNumber, secondNumber);
         }
 
-        $('#result').html(result);
+        $('#result').html("= &nbsp " + result);
     });
 
     // Click event for clear button
@@ -78,9 +78,9 @@ $(document).ready(function () {
 
     // Changes color theme
     $('#colorChanger2').on('click', function () {
-        $('.btn').css( "background-color", "#e91e63");
-        $('.operator').css( "background-color", "#42a5f5");
-        $('#buttonEqual').css( "background-color", "#4db6ac");
+        $('.btn').css( "background-color", "#00897b");
+        $('.operator').css( "background-color", "#039be5");
+        $('#buttonEqual').css( "background-color", "#d81b60");
         $('.colorChanger').css( "background-color", "white");
         $('#clear').css( "background-color", "white");
     });
